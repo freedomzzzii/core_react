@@ -1,0 +1,58 @@
+@import '../../_variable.scss';
+
+.CSModal {
+  .Loading {
+    z-index: 3000;
+  }
+}
+
+.CSMyModal {
+  .csmodal-header {
+    border: none;
+    .modal-title {
+      width: 100%;
+      .title {
+        font-family: $font-family-kanit;
+        font-size: 26px;
+        color: $gray5;
+      }
+      .csbtn-close {
+        background: transparent;
+        border: none;
+        height: 20px;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+        color: $black3;
+        text-shadow: 0 1px 0 $white;
+        opacity: .5;
+        padding: 0;
+        vertical-align: baseline;
+        float: right;
+      }
+    }
+  }
+  .csmodal-body {
+    padding-top: 0px;
+  }
+  .csmodal-footer {
+    border: none;
+    &.justify {
+      display: flex;
+      justify-content: space-between;
+    }
+    button {
+      min-width: 140px;
+    }
+  }
+  .csmodal-box {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: $black3;
+    opacity: .5;
+  }
+}

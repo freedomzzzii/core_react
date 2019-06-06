@@ -1,0 +1,91 @@
+@import '../../_variable.scss';
+
+.CSCalendar {
+  display: flex;
+  *:focus {
+    outline: none;
+  }
+  .form-control:focus {
+    box-shadow: none;
+    border: $border_input;
+    border-right: 0px;
+  }
+  .cs-input {
+    height: 36px;
+    width: 100%;
+    .cs-placeholder-box {
+      display: flex;
+      justify-content: space-between;
+      .cs-placeholder {
+        color: $gray11;
+        text-overflow: ellipsis;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .icon {
+        height: 24px;
+        margin-left: 3px;
+      }
+      .gray {
+        color: $gray11;
+      }
+    }
+    .cs-value {
+      text-overflow: ellipsis;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+  .cs-select-month {
+    width: 100px;
+    height: unset;
+    font-size: 12px;
+  }
+  .cs-select-year {
+    width: 80px;
+    margin-left: 10px;
+    height: unset;
+    font-size: 12px;
+  }
+  .DayPicker-Month {
+    width: 275px;
+  }
+  .cs-input {
+    border-right: none;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .calendar-btn {
+    color: #495057;
+    background-color: $white;
+    background-clip: padding-box;
+    border: 1px solid $gray17;
+    border-radius: .25rem;
+    border-left: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    line-height: 1.5;
+    font-size: 1rem;
+    max-height: 36px;
+    margin: 0;
+    .icon {
+      vertical-align: middle;
+    }
+    .gray {
+      color: $gray11;
+    }
+    &:active,
+    &:hover,
+    &:focus {
+      background-color: $white !important;
+      box-shadow: none !important;
+      color: #495057 !important;
+      border-top: 1px solid $gray17 !important;
+      border-right: 1px solid $gray17 !important;
+      border-bottom: 1px solid $gray17 !important;
+      outline: none !important;
+    }
+  }
+}

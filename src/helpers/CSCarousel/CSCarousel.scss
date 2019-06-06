@@ -1,0 +1,16 @@
+@import '../../_variable.scss';
+
+.CSCarousel {
+  .carousel-control-prev-icon:after,
+  .carousel-control-next-icon:after {
+    background-color: $black3;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 50%;
+    content: '';
+    top: calc(50% - 15px);
+    left: calc(50% - 15px);
+    z-index: -1;
+  }
+}

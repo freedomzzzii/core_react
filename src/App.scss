@@ -1,0 +1,150 @@
+@import './_variable.scss';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/react-table/react-table.css';
+@import '../node_modules/react-day-picker/lib/style.css';
+
+html {
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: $scroll_white; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $scroll_gray;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $scroll_gray2; 
+  }
+}
+
+.App,
+body {
+  // btn
+  .btn-green {
+    font-family: $font-family-kanit;
+    font-size: 24px;
+    font-weight: bold;
+    color: $green;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 5px;
+    background-color: $white;
+    box-shadow: $color_shadow;
+    border: solid 2px $green;
+  }
+  .btn-green2 {
+    border-radius: 3px;
+    background-color: $green;
+    border: none;
+    color: $white;
+    font-family: $font-family-kanit;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0px;
+    border: solid 2px $green;
+  }
+  .btn-gray {
+    border-radius: 3px;
+    background-color: $white;
+    border: solid 2px $gray3;
+    color: $gray3;
+    font-family: $font-family-kanit;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0px;
+    border: solid 2px $gray3;
+  }
+  .btn-blue {
+    font-family: $font-family-kanit;
+    font-size: 24px;
+    font-weight: bold;
+    color: $white;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 5px;
+    background-color: $blue;
+    box-shadow: $color_shadow;
+    border: solid 2px $blue;
+  }
+  .btn-blue-white {
+    font-family: $font-family-kanit;
+    font-size: 24px;
+    font-weight: bold;
+    color: $blue;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 5px;
+    background-color: $white;
+    border: solid 2px $blue;
+    box-shadow: $color_shadow;
+  }
+  .btn-white {
+    font-family: $font-family-kanit;
+    font-size: 24px;
+    font-weight: bold;
+    color: $black;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 5px;
+    background-color: $white;
+    border: solid 2px $black;
+    box-shadow: $color_shadow;
+  }
+  .btn-black {
+    font-family: $font-family-kanit;
+    font-size: 24px;
+    font-weight: bold;
+    color: $white;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 5px;
+    background-color: $black2;
+    border: solid 2px $black2;
+    box-shadow: $color_shadow;
+  }
+  .btn-red {
+    font-family: $font-family-kanit;
+    font-size: 24px;
+    font-weight: bold;
+    color: $white;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 5px;
+    background-color: $red;
+    border: solid 2px $red;
+    box-shadow: $color_shadow;
+  }
+  .btn-min {
+    min-width: 200px;
+  }
+
+  // avatar
+  .avatar {
+    border-radius: 50%;
+    background-color: $gray4;
+    color: $white;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    text-align: center;
+    font-weight: 500;
+    display: inline-block;
+    font-family: $font-family-kanit;
+    font-size: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .btn-min {
+      min-width: 150px;
+      font-size: 25px;
+    }
+  }
+  @media (max-width: 400px) {
+    .btn-min {
+      min-width: 130px;
+      font-size: 22px;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import '../../_variable.scss';
+
+.CSTable {
+  &.no-data {
+    .rt-tbody {
+      z-index: -1;
+    }
+  }
+  .ReactTable.data-table {
+    border: none !important;
+    min-height: 165px;
+    &.have {
+      .rt-table {
+        flex: unset;
+      }
+    }
+    .rt-table {
+      border: none !important;
+      background-color: $white;
+      box-shadow: $color_shadow2;
+      .rt-thead {
+        font-family: $font-family-thonburi;
+        font-size: 15px;
+        font-weight: 500;
+        color: $gray12;
+        box-shadow: none;
+        max-height: 48px;
+        .rt-th {
+          border: none;
+          padding: 5px 10px;
+          text-align: left;
+          background-color: $gray7;
+          &.-sort-asc,
+          &.-sort-desc {
+            font-weight: bold; 
+          }
+        }
+      }
+      .rt-tbody {
+        font-size: 14px;
+        font-weight: normal;
+        text-align: left;
+        color: $gray6;
+        overflow: unset;
+        .rt-tr-group {
+          border-bottom: none;
+          .rt-tr:hover {
+            background-color: $gray7 !important;
+            >.rt-td {
+              background-color: $gray7 !important;
+            }
+          }
+          * {
+            border: none;
+          }
+          .rt-td {
+            padding: 10px 10px 10px 10px;
+            border-top: solid 1px $gray8;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .pagination-bottom {
+      margin-top: 30px;
+      .-pagination {
+        box-shadow: none;
+        border: none;
+        justify-content: center;
+        .-previous, .-next {
+          flex: unset;
+          .-btn {
+            min-width: 40px;
+            width: unset;
+            background-color: $white;
+            box-shadow: $color_shadow2;
+            color: $gray9;
+          }
+          .-btn:hover {
+            color: $gray6;
+          }
+          .-btn[disabled] {
+            cursor: not-allowed;
+            color: $gray9;
+          }
+        }
+        .-center {
+          flex: unset;
+          font-size: 14px;
+          font-weight: normal;
+          margin-left: 15px;
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .rt-noData {
+      top: calc(50% - 14px);
+      padding: 0px;
+      background-color: unset;
+      font-size: 24px;
+      font-weight: 500;
+      z-index: 0;
+    }
+
+    .-loading {
+      display: none;
+    }
+  }
+}

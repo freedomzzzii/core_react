@@ -1,0 +1,14 @@
+@import '../../_variable.scss';
+
+.TemplateCSS {
+  .title {
+    font-family: $font-family-kanit;
+    font-size: 35px;
+    font-weight: bold;
+    color: $black2;
+    text-align: center;
+  }
+  button {
+    margin: 5px;
+  }
+}

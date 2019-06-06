@@ -1,0 +1,58 @@
+// font
+@import url('https://fonts.googleapis.com/css?family=Kanit:100,300&subset=thai');
+
+@font-face {
+  font-family: 'Thonburi';
+  src: url('/font/Thonburi.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-family-kanit: 'Kanit', sans-serif;
+$font-family-thonburi: 'Thonburi';
+
+// scroll
+$scroll_white: #ffffff;
+$scroll_gray: #888888;
+$scroll_gray2: #555555;
+
+// color
+$white: #ffffff;
+$gray: #888888;
+$gray2: #555555;
+$gray3: #9b9b9b;
+$gray4: #808080;
+$gray5: #4a4a4a;
+$gray6: #242d3a;
+$gray7: #eeeeee;
+$gray8: #e8e9ec;
+$gray9: #757e8f;
+$gray10: #d8d8d8;
+$gray11: #aaaaaa;
+$gray12: #979797;
+$gray16: #cccccc;
+$gray17: #ced4da;
+$blue: #71c9e2;
+$blue2: #2a3660;
+$black: #555555;
+$black2: #515151;
+$black3: #000000;
+$red: #dd6164;
+$light_blue: #00aeef;
+$light_blue4: #a5e7ff;
+$green: #7ed321;
+
+// shadow
+$color_shadow: 0 2px 10px 0 rgba(205, 214, 231, 0.3);
+$color_shadow2: 1px 1px 5px 0 rgba(0,0,0,.25);
+$bg_loading: rgba(0,0,0,0.4);
+$box_shadow_navbar: 0 0 10px 0 rgba(0, 0, 0, 0.05);
+$box_shadow_dropdown_navbar: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+$box_shadow_toolbar: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+$box_shadow_login: 2px 2px 20px 0 rgba(190, 195, 199, 0.42);
+$box_shadow_form_button: 0 12px 22px 0 rgba(0, 174, 239, 0.2);
+$box_shadow_input_group:0 2px 4px 0 #d9e0e8;
+$box_shadow_not_match: 2px 2px 20px 0 rgba(190, 195, 199, 0.42);
+
+// border input 
+$border_input: 1px solid #ced4da;

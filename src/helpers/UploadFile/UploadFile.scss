@@ -1,0 +1,13 @@
+@import '../../_variable.scss';
+
+.UploadFile {
+  margin: auto;
+  label.upload-file {
+    text-align: center;
+    cursor: pointer;
+    input[type="file"] {
+      display: none;
+    }
+    margin-bottom: 0px;
+  }
+}
