@@ -107,13 +107,17 @@ export default class CSCalendar extends Component {
 
   handleYearMonthChange = month => this.setState({ month });
 
-  handleDayClick = (day, { selected }) => {
+  handleDayClick = (day, modifiers = {}) => {
+    if (modifiers.disabled) {
+      return;
+    }
     this.setState({
-      selectedDay: selected ? undefined : day,
-      inputValue: selected ? undefined : day,
+      selectedDay: day,
+      inputValue: day,
       show: false,
     });
-    this.props.handleDate(selected ? undefined : day);
+    this.props.handleDate(day);
+    return;
   }
 
   handleResetCalendar = () => {
@@ -163,6 +167,7 @@ export default class CSCalendar extends Component {
           </DropdownToggle>
           <DropdownMenu className="cs-calendar" right>
             <DayPicker
+              selectedDays={inputValue}
               month={month}
               fromMonth={fromMonth}
               toMonth={toMonth}

@@ -123,7 +123,10 @@ export default class CSCalendarRange extends Component {
     }
   }
 
-  handleDayClick = day => {
+  handleDayClick = (day, modifiers = {}) => {
+    if (modifiers.disabled) {
+      return;
+    }
     const range = DateUtils.addDayToRange(day, this.state);
     this.setState({ ...range });
   }
