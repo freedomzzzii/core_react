@@ -7,6 +7,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "redux": "^4.0.4",
     "redux-thunk": "^2.3.0"
@@ -37,8 +38,10 @@
   "devDependencies": {
     "eslint-plugin-jest": "^22.10.0",
     "eslint-plugin-react": "^7.14.2",
+    "fetch-mock": "^7.3.6",
     "react-test-renderer": "^16.8.6",
     "redux-devtools": "^3.5.0",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3"
   }
 }
