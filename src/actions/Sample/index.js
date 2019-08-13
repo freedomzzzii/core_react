@@ -11,23 +11,23 @@ export const fetchGetPosts = () => (
 
       if (res.status === 200) {
         return dispatch({
-          type: GET_POSTS_SUCCESS,
+          'type': GET_POSTS_SUCCESS,
           data,
-          status: res.status,
+          'status': res.status,
         });
       } else if (res.status === 500 || res.status === 502) {
         // return RedirectURL('/warning');
       }
       return dispatch({
-        type: GET_POSTS_FAILURE,
-        data: null,
-        status: res.status ? res.status : res,
+        'type': GET_POSTS_FAILURE,
+        'data': null,
+        'status': res.status ? res.status : res,
       });
     } catch (err) {
       return dispatch({
-        type: GET_POSTS_FAILURE,
-        data: null,
-        status: err.status ? err.status : err,
+        'type': GET_POSTS_FAILURE,
+        'data': null,
+        'status': err.status ? err.status : err,
       });
     }
   }

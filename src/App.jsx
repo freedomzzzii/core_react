@@ -1,26 +1,58 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import './App.scss';
 
-import logo from './logo.svg';
+import commonConstant from './common/commonConstant';
+import { fetchGetPosts } from './actions';
 
-export default function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class Test extends Component {
+  constructor(props) {
+    super(props);
+    this.props.dispatch(fetchGetPosts());
+  }
+  render() {
+    return (
+      <div>eiei</div>
+    );
+  }
 }
+
+Test.propTypes = {
+  'dispatch': PropTypes.func.isRequired,
+};
+
+const Testcon = connect(({ getPosts }) => ({ getPosts }))(Test);
+
+const Dummy = () => (
+  <div className="App">
+    <header className="App-header">
+      <img src={commonConstant.reactIcon} className="App-logo" alt="logo" />
+      <Testcon />
+      <p>
+        Edit <code>src/App.js</code> and save to reload.
+      </p>
+      <a
+        className="App-link"
+        href="https://reactjs.org"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Learn React
+      </a>
+    </header>
+  </div>
+);
+
+export default () => (
+  <Router>
+    <div className="App">
+      <Switch>
+        <Route sensitive strict exact path={commonConstant.pathHome} component={Dummy} />
+        <Route sensitive strict exact component={Dummy} />
+      </Switch>
+    </div>
+  </Router>
+);
