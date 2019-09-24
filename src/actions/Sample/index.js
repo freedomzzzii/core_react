@@ -1,4 +1,5 @@
 import commontConstant from '../../common/commonConstant';
+// import { history } from '../../helpers';
 
 export const fetchGetPosts = () => (
   async dispatch => {
@@ -13,7 +14,7 @@ export const fetchGetPosts = () => (
           'status': res.status,
         });
       } else if (res.status === 500 || res.status === 502) {
-        // return RedirectURL('/warning');
+        // return history.push('/');
       }
       return dispatch({
         'type': commontConstant.GET_POSTS_FAILURE,
