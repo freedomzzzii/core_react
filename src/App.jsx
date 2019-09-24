@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './App.scss';
 
+import { history } from './helpers';
 import commonConstant from './common/commonConstant';
 import { fetchGetPosts } from './actions';
 
@@ -47,7 +48,7 @@ const Dummy = () => (
 );
 
 export default () => (
-  <Router>
+  <Router history={history}>
     <div className="App">
       <Switch>
         <Route sensitive strict exact path={commonConstant.pathHome} component={Dummy} />
