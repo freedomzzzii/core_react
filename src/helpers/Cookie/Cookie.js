@@ -1,3 +1,4 @@
+import commonConstant from '../../common/_commonConstant';
 import { validateHTTPS, validateHaveCookieName } from '../../helpers';
 
 export const createCookie = (name, value, hr) => {
@@ -9,7 +10,7 @@ export const createCookie = (name, value, hr) => {
       } else {
         dt.setTime(dt.getTime() + 3600000);
       }
-      return document.cookie = `${name}=${value}; expires=${hr ? dt.toUTCString() : ''}; domain=${process.env.REACT_APP_DOMAIN_COOKIE ? process.env.REACT_APP_DOMAIN_COOKIE : ''}; path=/${validateHTTPS(window.location.href) ? '; secure' : ''}`;
+      return document.cookie = `${name}=${value}; expires=${hr ? dt.toUTCString() : ''}; domain=${commonConstant.envCookie ? commonConstant.envCookie : ''}; path=/${validateHTTPS(window.location.href) ? '; secure' : ''}`;
     }
     return null;
   } catch (error) {
@@ -35,7 +36,7 @@ export const deleteCookie = name => {
   try {
     if (name) {
       if (validateHaveCookieName(name)) {
-        return `${name}=; expires=${new Date(new Date().setDate(new Date().getDate() - 1)).toUTCString()}; domain=${process.env.REACT_APP_DOMAIN_COOKIE ? process.env.REACT_APP_DOMAIN_COOKIE : ''}; path=/${validateHTTPS(window.location.href) ? '; secure' : ''}`;
+        return document.cookie = `${name}=; expires=${new Date(new Date().setDate(new Date().getDate() - 1)).toUTCString()}; domain=${commonConstant.envCookie ? commonConstant.envCookie : ''}; path=/${validateHTTPS(window.location.href) ? '; secure' : ''}`;
       }
     }
     return null;
