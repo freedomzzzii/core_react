@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import './App.scss';
 
 import commonConstant from './common/commonConstant';
 import { fetchGetPosts } from './actions';
+import { history } from './helpers';
 
 class Test extends Component {
   constructor(props) {
@@ -47,7 +48,7 @@ const Dummy = () => (
 );
 
 export default () => (
-  <Router>
+  <Router history={history}>
     <div className="App">
       <Switch>
         <Route sensitive strict exact path={commonConstant.pathHome} component={Dummy} />
