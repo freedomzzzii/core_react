@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects';
 
 import commonConstant from '../common/commonConstant';
-import { history } from '../../helpers';
+import { history } from '../helpers';
 
 export function* getAPI(type, path) {
   try {
