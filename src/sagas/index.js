@@ -1,15 +1,14 @@
 import { all } from 'redux-saga/effects';
 
-import { watchUpdateLanguage } from './Language';
+import { watcherUpdateLanguage } from './Language';
 
-import { watchDeleteUserRequest } from './User';
+import { watcherGetUser } from './User';
 
 export default function* rootSaga() {
   yield all([
     // language
-    watchUpdateLanguage(),
+    watcherUpdateLanguage(),
     // user
-    // watchGetUser(),
-    watchDeleteUserRequest(),
+    watcherGetUser(),
   ]);
 }

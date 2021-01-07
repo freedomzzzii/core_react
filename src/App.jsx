@@ -23,9 +23,13 @@ PublicRoute.propTypes = {
   'restricted': PropTypes.bool,
 };
 
-const App = () => (
+const App = props => (
   <Router history={history}>
     <div className="App">
+      <button onClick={() => {
+        props.dispatch(fetchGetUser());
+        props.dispatch(fetchGetUser());
+      }}>get user</button>
       <Switch>
         <PublicRoute sensitive strict exact path={commonConstant.pathLogout} component={Logout} />
         <PublicRoute restricted sensitive strict exact path={commonConstant.pathHome} component={Home} />

@@ -2,6 +2,6 @@ import { put } from 'redux-saga/effects';
 
 import commonConstant from '../../common/commonConstant';
 
-export function* watchUpdateLanguage() {
+export function* watcherUpdateLanguage() {
   yield put({ 'type': commonConstant.SET_LANGUAGE });
 }

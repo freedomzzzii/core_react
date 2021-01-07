@@ -1,29 +1,33 @@
-import { put } from 'redux-saga/effects';
+import { put, take } from 'redux-saga/effects';
 
 import commonConstant from '../common/commonConstant';
 import { history } from '../helpers';
 
-export function* getAPI(type, path) {
+export function* workerServiceGetAPI(action) {
   try {
     yield put({ 'type': commonConstant.LOADING_GLOBAL_SHOW });
 
-    const response = yield fetch(`${commonConstant.domainAPI}${path}`);
+    const response = yield fetch(`${commonConstant.domainAPI}${action.pathAPI}`);
     const data = yield response.json();
 
     switch (response.status) {
       case 200:
         yield put({ 'type': commonConstant.CALL_API_SUCCESS });
-        return yield put({ type, data, 'status': response.status });
+        yield put({ 'type': action.typeSuccess, data, 'status': response.status });
+        return yield put({ 'type': commonConstant.LOADING_GLOBAL_HIDE });
       case 500:
         yield put({ 'type': commonConstant.CALL_API_FAILURE });
-        return yield put({ 'type': commonConstant.LOADING_GLOBAL_HIDE, 'data': null, 'status': response.status });
+        yield put({ 'type': action.typeFailure, 'data': null, 'status': response.status });
+        return yield put({ 'type': commonConstant.LOADING_GLOBAL_HIDE });
       default:
         yield put({ 'type': commonConstant.CALL_API_FAILURE });
-        return yield put({ 'type': commonConstant.LOADING_GLOBAL_HIDE, 'data': null, 'status': response.status });
+        yield put({ 'type': action.typeFailure, 'data': null, 'status': response.status });
+        return yield put({ 'type': commonConstant.LOADING_GLOBAL_HIDE });
     }
   } catch (error) {
     yield put({ 'type': commonConstant.LOADING_GLOBAL_HIDE });
-    yield put({
+    return yield put({
+      'type': commonConstant.CALL_API_FAILURE,
       'data': null,
       'status': error.status ? error.status : error,
       'dateTime': new Date(),

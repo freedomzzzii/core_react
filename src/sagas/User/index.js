@@ -1,11 +1,15 @@
-import { call, take } from 'redux-saga/effects';
+import { call, takeLatest, put, race } from 'redux-saga/effects';
 
 import commonConstant from '../../common/commonConstant';
-import { getAPI } from '../Service';
-import { fetchGetUser } from '../../actions';
+import { workerServiceGetAPI } from '../Service';
 
-export function* watchDeleteUserRequest(){
-  const test = yield take(fetchGetUser);
+function* workerGetUser(action) {
+  yield call(workerServiceGetAPI, action);
+}
 
-  yield call(getAPI, test.type, test.pathAPI);
+export function* watcherGetUser(){
+  yield race({
+    response: yield takeLatest(commonConstant.GET_USER_REQUEST, workerGetUser),
+    cancel: yield put({ 'type': commonConstant.LOADING_GLOBAL_HIDE }),
+  })
 }
