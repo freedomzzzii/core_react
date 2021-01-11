@@ -4,7 +4,7 @@ import {
   createCookie,
   getCookie,
   deleteCookie,
-} from '../helpers';
+} from '../shared/functions';
 
 // cookie
 const createCookieSample = value => createCookie(commonConstant.cookieSample, value);

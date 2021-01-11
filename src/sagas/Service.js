@@ -1,7 +1,7 @@
-import { put, take } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 
 import commonConstant from '../common/commonConstant';
-import { history } from '../helpers';
+import { history } from '../shared/functions';
 
 export function* workerServiceGetAPI(action) {
   try {

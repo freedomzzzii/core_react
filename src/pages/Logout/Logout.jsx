@@ -2,8 +2,8 @@ import React from 'react';
 
 import commonConstant from '../../common/commonConstant';
 import { createCookieSample, deleteCookieSample } from '../../common/commonFunction';
-import { Button } from '../../components';
-import { history } from '../../helpers';
+import { Button } from '../../shared/components';
+import { history } from '../../shared/functions';
 
 const Logout = () => {
   deleteCookieSample();

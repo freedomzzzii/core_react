@@ -6,7 +6,7 @@ import { getUser } from './User';
 
 import { loading, callAPI } from './Global';
 
-export default combineReducers({
+const reducers = {
   // language
   language,
   // user
@@ -14,4 +14,11 @@ export default combineReducers({
   // global
   loading,
   callAPI,
-});
+};
+
+const rootReducer = combineReducers(reducers);
+
+export {
+  reducers,
+  rootReducer,
+};

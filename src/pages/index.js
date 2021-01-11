@@ -1,8 +1,8 @@
-import Oops from './Oops';
+import Oops from './Oops/Oops';
 
-import Home from './Home';
+import Home from './Home/Home';
 
-import Logout from './Logout';
+import Logout from './Logout/Logout';
 
 export {
   Oops,

@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -7,8 +6,7 @@ import './App.scss';
 
 import commonConstant from './common/commonConstant';
 import { getCookieSample } from './common/commonFunction';
-import { history } from './helpers';
-import { setLanguage, fetchGetUser } from './actions';
+import { history } from './shared/functions';
 import { Oops, Home, Logout } from './pages';
 
 const PublicRoute = props => (
@@ -19,17 +17,17 @@ const PublicRoute = props => (
     : <Route {...props} />
 );
 
+PublicRoute.defaultProps = {
+  'restricted': false,
+};
+
 PublicRoute.propTypes = {
   'restricted': PropTypes.bool,
 };
 
-const App = props => (
+const App = () => (
   <Router history={history}>
     <div className="App">
-      <button onClick={() => {
-        props.dispatch(fetchGetUser());
-        props.dispatch(fetchGetUser());
-      }}>get user</button>
       <Switch>
         <PublicRoute sensitive strict exact path={commonConstant.pathLogout} component={Logout} />
         <PublicRoute restricted sensitive strict exact path={commonConstant.pathHome} component={Home} />
@@ -39,6 +37,4 @@ const App = props => (
   </Router>
 );
 
-const mapStateToProps = ({ language }) => ({ language });
-
-export default connect(mapStateToProps)(App);
+export default App;
