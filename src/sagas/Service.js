@@ -1,7 +1,7 @@
 import { put } from 'redux-saga/effects';
 
 import commonConstant from '../common/commonConstant';
-import { history } from '../shared/functions';
+import { history } from '../shared/functions'; // TODO: handle response status code and redirect pass to oops page
 
 export function* workerServiceGetAPI(action) {
   try {

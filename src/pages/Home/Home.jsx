@@ -6,7 +6,7 @@ import './style.scss';
 import commonConstant from '../../common/commonConstant';
 import { setLanguage } from '../../actions';
 import { Button } from '../../shared/components';
-import { reducers } from '../../reducers'; 
+import { reducers } from '../../reducers';
 
 import { GetUser , ListUser } from './components';
 
